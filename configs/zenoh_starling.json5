@@ -39,14 +39,14 @@
 
       ////
       //// I WOULDN'T KNOW WHAT TO ALLOW/DENY, BUT I GUESS IT COULD BE USEFUL
-      // allow: {
+      allow: {
       //   publishers: [".*/laser_scan", "/tf", ".*/pose"],
-      //   subscribers: [".*/cmd_vel"],
+         subscribers: ["/mission_control"],
       //   service_servers: [".*/.*_parameters"],
       //   service_clients: [],
       //   action_servers: [".*/rotate_absolute"],
       //   action_clients: [],
-      // },
+      },
       // deny: {
       //   publishers: ["/rosout", "/parameter_events"],
       //   subscribers: ["/rosout"],
