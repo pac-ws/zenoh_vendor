@@ -37,16 +37,14 @@
       //// NOT NEEDED
       // shm_enabled: false,
 
-      ////
-      //// I WOULDN'T KNOW WHAT TO ALLOW/DENY, BUT I GUESS IT COULD BE USEFUL
-      // allow: {
-      //   publishers: [".*/laser_scan", "/tf", ".*/pose"],
-      //   subscribers: [".*/cmd_vel"],
+      allow: {
+         publishers: ["/mission_control", "/pac_gcs/mission_origin_gps", ".*/cmd_vel"],
+         subscribers: [".*/pose"],
       //   service_servers: [".*/.*_parameters"],
       //   service_clients: [],
       //   action_servers: [".*/rotate_absolute"],
       //   action_clients: [],
-      // },
+      },
       // deny: {
       //   publishers: ["/rosout", "/parameter_events"],
       //   subscribers: ["/rosout"],

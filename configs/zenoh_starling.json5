@@ -37,11 +37,9 @@
       //// NOT NEEDED
       // shm_enabled: false,
 
-      ////
-      //// I WOULDN'T KNOW WHAT TO ALLOW/DENY, BUT I GUESS IT COULD BE USEFUL
       allow: {
-      //   publishers: [".*/laser_scan", "/tf", ".*/pose"],
-         subscribers: ["/mission_control"],
+         publishers: [".*/pose"],
+         subscribers: ["/mission_control", "/pac_gcs/mission_origin_gps", ".*/cmd_vel"],
       //   service_servers: [".*/.*_parameters"],
       //   service_clients: [],
       //   action_servers: [".*/rotate_absolute"],
