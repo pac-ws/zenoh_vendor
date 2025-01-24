@@ -41,7 +41,7 @@
          publishers: [".*/pose"],
          subscribers: ["/mission_control", "/pac_gcs/mission_origin_gps", ".*/cmd_vel"],
       //   service_servers: [".*/.*_parameters"],
-         service_clients: ["/sim/get_world_map"],
+         service_clients: ["/sim/get_world_map","/sim/sim_centralized/get_parameters"],
       //   action_servers: [".*/rotate_absolute"],
       //   action_clients: [],
       },
