@@ -39,7 +39,7 @@
 
       allow: {
          publishers: [".*/pose"],
-         subscribers: ["/mission_control", "/pac_gcs/mission_origin_gps", ".*/cmd_vel", "/sim/all_robot_sim_poses"],
+         subscribers: ["/mission_control", "/pac_gcs/mission_origin_gps", ".*/cmd_vel", "/sim/all_robot_sim_poses", "/pac_gcs/status_pac"],
       //   service_servers: [".*/.*_parameters"],
          service_clients: ["/sim/get_system_info"],
       //   action_servers: [".*/rotate_absolute"],
