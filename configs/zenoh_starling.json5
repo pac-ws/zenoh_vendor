@@ -41,9 +41,9 @@
          publishers: [".*/pose", ".*/cmd_vel"],
          subscribers: ["/mission_control", "/mission_origin_gps", ".*/cmd_vel", "/sim/all_robot_positions", "/pac_gcs/status_pac"],
       //   service_servers: [".*/.*_parameters"],
-         service_clients: ["/sim/get_system_info", "/sim/update_world_file"],
+         service_clients: ["/sim/get_system_info"],
       //   action_servers: [".*/rotate_absolute"],
-      //   action_clients: [],
+         action_clients: ["/sim/update_world_file"],
       },
       // deny: {
       //   publishers: ["/rosout", "/parameter_events"],
