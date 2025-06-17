@@ -40,10 +40,10 @@
       allow: {
          publishers: ["/mission_control", "/mission_origin_gps", ".*/cmd_vel", "/sim/all_robot_positions", "/pac_gcs/status_pac"],
          subscribers: [".*/pose", ".*/cmd_vel"],
-         service_servers: ["/sim/get_system_info"],
-      //   service_clients: [],
-         action_servers: ["/sim/update_world_file"],
-      //   action_clients: [],
+         service_servers: ["/sim/get_system_info",],
+         service_clients: [ ".*/update_world_file"],
+         action_servers: ["/update_world"],
+         //action_clients: [".*/update_world_file"],
       },
       // deny: {
       //   publishers: ["/rosout", "/parameter_events"],
