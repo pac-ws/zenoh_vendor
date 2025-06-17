@@ -38,7 +38,7 @@
       // shm_enabled: false,
 
       allow: {
-         publishers: ["/mission_control", "/pac_gcs/mission_origin_gps", ".*/cmd_vel", "/sim/all_robot_positions", "/pac_gcs/status_pac"],
+         publishers: ["/mission_control", "/mission_origin_gps", ".*/cmd_vel", "/sim/all_robot_positions", "/pac_gcs/status_pac"],
          subscribers: [".*/pose", ".*/cmd_vel"],
          service_servers: ["/sim/get_system_info"],
       //   service_clients: [],
