@@ -42,7 +42,7 @@
          subscribers: [".*/pose", ".*/cmd_vel"],
          service_servers: ["/sim/get_system_info",],
          service_clients: [ ".*/update_world_file"],
-         action_servers: ["/update_world"],
+         // action_servers: ["/update_world"],
          //action_clients: [".*/update_world_file"],
       },
       // deny: {

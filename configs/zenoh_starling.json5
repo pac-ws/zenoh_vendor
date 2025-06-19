@@ -135,7 +135,8 @@
   //// I WOULD SWITCH TO UDP
   connect: {
     endpoints: [
-      "tcp/192.168.0.204:7447"
+      "tcp/192.168.0.204:7447",
+      "tcp/192.168.0.159:7447",
     ]
   },
 
