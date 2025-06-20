@@ -41,7 +41,7 @@
          publishers: [".*/pose", ".*/cmd_vel", ".*/cnn_features"],
          subscribers: ["/mission_control", "/mission_origin_gps", ".*/cmd_vel", "/sim/all_robot_positions", "/pac_gcs/status_pac", ".*/cnn_features"],
          service_servers: [".*/update_world_file"],
-         service_clients: ["/sim/get_system_info"],
+         service_clients: ["/sim/get_system_info", ".*/get_namespaces_robots"],
          //action_clients: ["*/update_world_file"],
          //action_servers: ["*/update_world_file"],
       },
