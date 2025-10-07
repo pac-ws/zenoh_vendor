@@ -38,8 +38,8 @@
       // shm_enabled: false,
 
       allow: {
-         publishers: ["/mission_control", "/mission_origin_gps", ".*/cmd_vel", "/sim/all_robot_positions", "/pac_gcs/status_pac"],
-         subscribers: [".*/pose", ".*/cmd_vel", ".*/cnn_features"],
+         publishers: ["/mission_control", "/mission_origin_gps", ".*/cmd_vel", "/sim/all_robot_positions", "/pac_gcs/status_pac", "/chatter"],
+         subscribers: [".*/pose", ".*/cmd_vel", ".*/cnn_features", "/chatter"],
          service_servers: ["/sim/get_system_info", ".*/get_namespaces_robots"],
          service_clients: [ ".*/update_world_file"],
          // action_servers: ["/update_world"],
@@ -124,7 +124,7 @@
   //// SET TO 'ROUTER' FOR THE GCS ONLY AND 'CLIENT' FOR ALL DRONES IN
   //// CENTRALIZED EXPERIMENT, SET TO 'PEERS' FOR DRONES IN DECENTRALIZED
   //// EXPERIMENTS
-  mode: "router", 
+  mode: "peer", 
 
   ////
   //// Which endpoints to connect to. E.g. tcp/localhost:7447.
@@ -133,11 +133,11 @@
   //// SET TO THE GCS IN REAL EXPERIMENTS
   //// I WOULD TRY WITH TCP FIRST AND IF IT DOESN'T WORK WITH THREE DRONES
   //// I WOULD SWITCH TO UDP
-  connect: {
-    endpoints: [
-      "tcp/localhost:7447"
-    ]
-  },
+  //connect: {
+  //  endpoints: [
+  //    "tcp/localhost:7447"
+  //  ]
+  //},
 
   ////
   //// NOT NEEDED FOR CENTRALIZED
@@ -150,37 +150,37 @@
   ////
   //// Configure the scouting mechanisms and their behaviours
   //// THE DEFAULT ZENOH CONFIGURATION (IN THE OTHER FILE) LOOKS FINE
-  //scouting: {
-  //  /// The UDP multicast scouting configuration.
-  //  multicast: {
-  //    /// Whether multicast scouting is enabled or not
-  //    enabled: true,
-  //    /// The socket which should be used for multicast scouting
-  //    address: "224.0.0.224:7446",
-  //    /// The network interface which should be used for multicast scouting
-  //    interface: "auto", // If not set or set to "auto" the interface if picked automatically
-  //    /// Which type of Zenoh instances to automatically establish sessions with upon discovery on UDP multicast.
-  //    /// Accepts a single value or different values for router, peer and client.
-  //    /// Each value is an array containing values "peer", "router" and "client".
-  //    autoconnect: { router: [], peer: ["router","peer"] },
-  //    /// Whether or not to listen for scout messages on UDP multicast and reply to them.
-  //    listen: true,
-  //  },
-  //  /// The gossip scouting configuration.
-  //  gossip: {
-  //    /// Whether gossip scouting is enabled or not
-  //    enabled: true,
-  //    /// When true, gossip scouting information is propagated multiple hops to all nodes in the local network.
-  //    /// When false, gossip scouting information is only propagated to the next hop.
-  //    /// Activating multihop gossip implies more scouting traffic and a lower scalability.
-  //    /// It mostly makes sense when using "linkstate" routing mode where all nodes in the subsystem don't have
-  //    /// direct connectivity with each other.
-  //    multihop: false,
-  //    /// Which type of Zenoh instances to automatically establish sessions with upon discovery on gossip.
-  //    /// Accepts a single value or different values for router, peer and client.
-  //    /// Each value is an array containing values "peer", "router" and "client".
-  //    autoconnect: { router: [], peer: ["router","peer"] },
-  //  },
-  //},
+  scouting: {
+    /// The UDP multicast scouting configuration.
+    multicast: {
+      /// Whether multicast scouting is enabled or not
+      enabled: true,
+      /// The socket which should be used for multicast scouting
+      //address: "224.0.0.224:7446",
+      /// The network interface which should be used for multicast scouting
+      interface: "auto", // If not set or set to "auto" the interface if picked automatically
+      /// Which type of Zenoh instances to automatically establish sessions with upon discovery on UDP multicast.
+      /// Accepts a single value or different values for router, peer and client.
+      /// Each value is an array containing values "peer", "router" and "client".
+      //autoconnect: { router: [], peer: ["router","peer"] },
+      /// Whether or not to listen for scout messages on UDP multicast and reply to them.
+      listen: true,
+    },
+    /// The gossip scouting configuration.
+    //gossip: {
+    //  /// Whether gossip scouting is enabled or not
+    //  enabled: true,
+    //  /// When true, gossip scouting information is propagated multiple hops to all nodes in the local network.
+    //  /// When false, gossip scouting information is only propagated to the next hop.
+    //  /// Activating multihop gossip implies more scouting traffic and a lower scalability.
+    //  /// It mostly makes sense when using "linkstate" routing mode where all nodes in the subsystem don't have
+    //  /// direct connectivity with each other.
+    //  multihop: false,
+    //  /// Which type of Zenoh instances to automatically establish sessions with upon discovery on gossip.
+    //  /// Accepts a single value or different values for router, peer and client.
+    //  /// Each value is an array containing values "peer", "router" and "client".
+    //  autoconnect: { router: [], peer: ["router","peer"] },
+    //},
+  },
 
 }
